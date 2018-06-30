@@ -17,7 +17,7 @@ contract EscrowController {
   // Records nonce of user in case of creation of multiple escrows
   mapping(address => uint) nonceNumber;
 
-  // Mapping of escrow hash to Holdings struct
+  // Mapping of escrow hash to Escrow struct
   mapping(bytes32 => Escrow) escrows;
 
   // Basic Constructor
