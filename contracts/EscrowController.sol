@@ -36,10 +36,10 @@ contract EscrowController {
     bytes32 escrowHash = keccak256(msg.sender, _receiver, msg.value, nonce);
     
     // Make sure we don't overwrite an existing escrow
-    require(!escrows[escrowHash]);
+    require(escrows[escrowHash].sender == address(0));
 
     // create the new escrow, with the value being the sent amount (msg.value)
-    escrows[escrowHash] = new Escrow(msg.sender, _receiver, msg.value, false);
+    escrows[escrowHash] = Escrow(msg.sender, _receiver, msg.value, false);
 
     emit EscrowCreated(msg.sender, _receiver, msg.value, escrowHash);
   }
