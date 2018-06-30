@@ -3,5 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "David <deebenchimol@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf bot_build && mkdir bot_build",
+    "build-babel": "babel -d ./bot_build ./src -s",
+    "build": "yarn clean && yarn build-babel",
+    "start": "yarn build && node ./bot_build/index.js",
+    "switch_to_dev": "export $(cat .env | xargs) && wget --spider https://api.telegram.org/bot$TOKEN/setWebhook?url= --delete-after && yarn start"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.15.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.13.4",
+    "node-telegram-bot-api": "^0.30.0",
+    "truffle": "^4.1.13",
+    "web3": "^1.0.0-beta.34"
+  }
 }
