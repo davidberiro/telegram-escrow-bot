@@ -1,0 +1,7 @@
+{
+  "name": "telegram-escrow-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "David <deebenchimol@gmail.com>",
+  "license": "MIT"
+}
