@@ -1,5 +1,5 @@
-var Escrow = artifacts.require('Escrow.sol')
+var EscrowController = artifacts.require('EscrowController.sol')
 
 module.exports = function(deployer) {
-  deployer.deploy(Escrow)
+  deployer.deploy(EscrowController)
 }
