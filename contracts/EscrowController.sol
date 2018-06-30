@@ -1,6 +1,6 @@
 pragma solidity ^0.4.23;
 
-Contract EscrowController {
+contract EscrowController {
   address public owner;
 
   event EscrowCreated(address sender, address receiver, uint amount, bytes32 escrowHash);
@@ -79,7 +79,7 @@ Contract EscrowController {
     // sending the amount back to the sender
     msg.sender.transfer(amount);
 
-    emit EscrowCancelled(msg.sender, receiver, amount, _escrowHash);    
+    emit EscrowCanceled(msg.sender, receiver, amount, _escrowHash);    
   }
 
 }
